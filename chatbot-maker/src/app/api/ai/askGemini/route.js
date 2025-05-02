@@ -1,6 +1,6 @@
-const { createPrompt } = require("../helper");
+import { createPrompt } from "../../helper";
 
-async function POST(){
+export async function POST(req){
     try{
         const {text,context} = await req.json();
         const prompt = createPrompt({text,context});
@@ -11,17 +11,30 @@ async function POST(){
                 headers:{
                     "Content-Type": "application/json",
                 },
-                body:{
+                body: JSON.stringify({
                     contents: [
                         {
                             parts:[{text:prompt}],
                         }
                     ]
-                }
+                })
             }
         )
+        const data = await response.json();
+        return new Response(JSON.stringify({response:data}),{
+            status:201,
+            headers:{
+                "Content-Type" : "application/json"
+            }
+        })
     }
     catch(err){
-
+        console.log(err)
+        return new Response(JSON.stringify({err: "Internal Server Error"}),{
+            status:500,
+            headers:{
+                "Content-Type" : "application/json"
+            }
+        })
     }
 }
