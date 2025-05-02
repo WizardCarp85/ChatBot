@@ -13,9 +13,8 @@ export const getChatbots = async ({token}) => {
     }
     return response.json();
 };
-
 export const createChatbot = async ({name,context,token}) => {
-    const response = await fetch('/api/chatbot/create', 
+    const response = await fetch('/api/chatbot/create',
         {
             method: "POST",
             body: JSON.stringify({ name, context }),
@@ -31,7 +30,6 @@ export const createChatbot = async ({name,context,token}) => {
         }
         return response;
 }
-
 export const getChatbotByName = async ({ name, token }) => {
     const response = await fetch(`/api/chatbot/getByChatbotName?name=${name}`, {
       method: "GET",
@@ -48,14 +46,11 @@ export const getChatbotByName = async ({ name, token }) => {
     return response.json();
   };
 
-export const getAllChatBots = async () => {
-    const response = await fetch("/api/chatbot/getAll",{
-        method: "GET",
-    });
-    if (!response.ok) {
-        const {err} = await response.json();
-        console.log(err);
-        throw new Error(err || "Error getting chatbot");
-    }
-    return response;
-};
+
+
+
+
+
+
+
+

@@ -4,8 +4,9 @@ export async function POST(req){
     try{
         const {text,context} = await req.json();
         const prompt = createPrompt({text,context});
+        const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
         const response = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyAAUtDVOU9sk-c-gFiAJvdqQsH6gjN6D9s`,
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
             {
                 method:'POST',
                 headers:{
