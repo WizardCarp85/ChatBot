@@ -1,0 +1,86 @@
+*{
+    font-family: 'Baloo 2', cursive;
+}
+body{
+    background-color: rgb(205, 205, 205);
+}
+.navbar{
+    background-color: #161616;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px;
+    box-sizing: border-box;
+}
+.links-div{
+    display: flex;
+    gap: 50px;
+    box-sizing: border-box
+}
+.links{
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+}
+.links:hover{
+    background-color: rgb(53, 53, 53);
+    border-radius: 5px;
+}
+.links:active{
+    background-color: rgb(0, 155, 252);
+    border-radius: 5px;
+}
+.buttonlogin{
+    background: none;
+    font-size: 24px;
+    border: none;
+    padding: 10px;
+}
+.title{
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0;
+}
+.dashboard{
+    text-align: center;
+    font-size: 1.7rem;
+}
+.bot-cards{
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+
+}
+.bot-cards:hover{
+    box-shadow: 3px 3px 6px 6px gray;
+    transform: translateY(+2px);
+    transition: all 0.3s ease-in-out;
+}
+.add-bot{
+    transition: all 0.3s ease-in-out;
+}
+.add-bot:hover{
+    box-shadow: 2px 2px 3px 3px gray;
+    transition: all 0.3s ease-in-out;
+}
+.add-bot:active{
+    box-shadow: 2px 2px 3px 3px gray;
+    transform: translateY(+2px);
+    transition: all 0.1s ease-in-out;
+}
+.cards-layout{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+}
+.chat-top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.signupform{
+    text-align: center;
+    font-size: 2em;
+}
